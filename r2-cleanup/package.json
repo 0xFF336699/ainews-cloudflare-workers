@@ -1,0 +1,15 @@
+{
+  "name": "r2-cleanup-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker to cleanup R2 objects without environment prefix",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler preview"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240909.0",
+    "wrangler": "^3.0.0"
+  }
+}

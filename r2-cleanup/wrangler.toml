@@ -1,0 +1,28 @@
+name = "r2-cleanup-worker"
+main = "src/index.js"
+compatibility_date = "2024-09-27"
+
+[vars]
+ENVIRONMENT = "dev"
+# 安全配置
+REQUIRE_AUTH = "true"
+REQUIRE_IP_WHITELIST = "true"
+MAX_DAILY_OPERATIONS = "100"
+
+# 密钥配置 (实际部署时需要设置)
+[vars.secrets]
+# API_KEY = "your-secret-api-key"  # 通过 wrangler secret put API_KEY 设置
+# IP_WHITELIST = "127.0.0.1,10.0.0.0/8,192.168.0.0/16"  # 允许的IP地址
+
+# 多个R2存储桶配置
+[[r2_buckets]]
+binding = "R2_BUCKET_MAIN"
+bucket_name = "ai-news-main"
+
+[[r2_buckets]]
+binding = "R2_BUCKET_BACKUP"
+bucket_name = "droid"
+
+[[r2_buckets]]
+binding = "R2_BUCKET_TEMP"
+bucket_name = "emc-zh-cn"
